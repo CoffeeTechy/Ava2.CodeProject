@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ava2.CodeProject", "Ava2.CodeProject\Ava2.CodeProject.csproj", "{06460B86-FD6E-4E58-8DBF-32755EA61759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06460B86-FD6E-4E58-8DBF-32755EA61759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06460B86-FD6E-4E58-8DBF-32755EA61759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06460B86-FD6E-4E58-8DBF-32755EA61759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06460B86-FD6E-4E58-8DBF-32755EA61759}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49234E59-79B2-4851-9FF4-3AD6E73EC271}
+	EndGlobalSection
+EndGlobal

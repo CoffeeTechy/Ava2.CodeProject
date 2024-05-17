@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Ava2.CodeProject.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+        Width="600" Height="350"
+        x:Class="Ava2.CodeProject.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Ava2.CodeProject">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+  <DockPanel>
+    <SplitView DisplayMode="CompactInline" CompactPaneLength="30"
+            OpenPaneLength="150" IsPaneOpen="{Binding PaneOpen}">
+      
+      <SplitView.Pane>
+        <Grid ColumnDefinitions="Auto, Auto">
+
+          <StackPanel Grid.Column="0" Background="LightBlue">
+            <Button Content="{Binding IsOpen}" Width="30" Command="{Binding OpenPane}"
+                    ClickMode="Press"/>
+          </StackPanel>
+
+          <StackPanel Grid.Column="1" Margin="6,0,0,0">
+            <Button Content="First Page" FontSize="14" Command="{Binding SetIndexBtn1}"/>
+            <Button Content="Second Page" Command="{Binding SetIndexBtn2}"/>
+            <Button Content="Third Page" Command="{Binding SetIndexBtn3}"/>
+          </StackPanel>
+
+        </Grid>
+      </SplitView.Pane>
+      
+      <SplitView.Content>
+        <Grid RowDefinitions="*, Auto">
+          <TransitioningContentControl Grid.Row="0" Content="{Binding CurrentPage}"/>
+
+          <Grid Grid.Row="1" Background="Gray" Height="30">
+            <Button Content="Previous" Command="{Binding Previous}" 
+                    ToolTip.Tip="Click for previous page"/>
+            <Label Content="Page #: " HorizontalAlignment="Center" Margin="0,0,40,0"/>
+            <Label Content="{Binding PageNum}" HorizontalAlignment="Center" Margin="30,0,0,0"
+                   FontWeight="Bold"/>
+            <Button Content="Next" Name="Next" HorizontalAlignment="Right" Command="{Binding Next}"
+                    ToolTip.Tip="Click for next page"/>
+          </Grid>
+        </Grid>       
+      </SplitView.Content>
+      
+    </SplitView>
+  </DockPanel>
+ 
+
+</Window>
