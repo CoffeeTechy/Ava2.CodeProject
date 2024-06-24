@@ -1,8 +1,16 @@
-﻿using Avalonia.Media;
+﻿using Avalonia.Controls;
+using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security;
+using System.Security.AccessControl;
 
 namespace Ava2.CodeProject.ViewModels
 {
@@ -58,6 +66,7 @@ namespace Ava2.CodeProject.ViewModels
             PageNum = Index + 1;
         }
 
+        //SplitView buttons have to say the page number specifically
         public void SetIndexBtn1()
         {
             Index = 0;
@@ -79,6 +88,7 @@ namespace Ava2.CodeProject.ViewModels
             PageNum = 3;
         }
 
+        //the bottom buttons increase and descrease the page number and index by 1 
         public void Next()
         {
             if (Index < Pages.Length - 1)
@@ -96,7 +106,13 @@ namespace Ava2.CodeProject.ViewModels
                 Index--;
                 CurrentPage = Pages[Index];
                 PageNum--;
-            }         
+            }
         }
+
+        //public void StartExcel()
+        //{
+        //    var excelApp = new Microsoft.Office.Interop.Excel.Application();
+        //    Process.Start("C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013");
+        //}
     }
 }

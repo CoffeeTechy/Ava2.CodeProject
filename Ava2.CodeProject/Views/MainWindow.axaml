@@ -26,6 +26,7 @@
           <StackPanel Grid.Column="0" Background="LightBlue">
             <Button Content="{Binding IsOpen}" Width="30" Command="{Binding OpenPane}"
                     ClickMode="Press"/>
+            <!--<Button Command="{Binding StartExcel}" Content="#"/>-->
           </StackPanel>
 
           <StackPanel Grid.Column="1" Margin="6,0,0,0">
